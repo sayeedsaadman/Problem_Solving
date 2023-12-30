@@ -3,24 +3,28 @@ using namespace std;
 int main()
 {
     int t;
-    cin>>t;
-    while(t--)
+    cin >> t;
+    while (t--)
     {
-        int n,k;
-        cin>>n>>k;
-        int x,mul = 1;
-        for (int i = 0; i <n; i++)
+        int n, k;
+        cin >> n >> k;
+        long long arr[n];
+        for (int i = 0; i < n; i++)
         {
-            cin>>x;
-            mul*=x;
+            cin >> arr[i];
         }
-        if((2023%mul)==0)
+        long long mul = 1;
+        for (int i = 0; i < n; i++)
         {
-            cout<<"YES"<<endl;
-            cout << 2023 /mul << " ";
-            for(int i=1;i<k;i++)
+            mul *= arr[i];
+        }
+        if ((2023 % mul) == 0)
+        {
+            cout << "YES" << endl;
+            cout << 2023 / mul << " ";
+            for (int i = 1; i < k; i++)
             {
-                cout<<1<< " ";
+                cout << 1 << " ";
             }
             cout << endl;
         }
@@ -28,6 +32,5 @@ int main()
         {
             cout << "NO" << endl;
         }
-        
     }
 }
