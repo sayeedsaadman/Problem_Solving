@@ -1,4 +1,4 @@
-//WA 4 
+
 #include<iostream>
 using namespace std;
 int main()
@@ -11,6 +11,6 @@ int main()
     }
     else if(x%2 != 0)
     {
-        cout<<(x-x)-x+2;
+        cout<<(x/2)-x;
     }
 }
