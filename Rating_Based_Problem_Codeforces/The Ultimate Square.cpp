@@ -19,29 +19,17 @@ typedef double dbl;
 #define FOR1(i,n) for(int i = 1; i <=n; i++) // 1 based indexing
 
 void solve() {
-        int n;
-        cin>>n;
-        int arr[n+10];
-        FOR0(i,n){
-            cin>>arr[i];
-        }
-        sort(arr,arr+n);
-        int freq[200010] = {0};
-        FOR0(i,n){
-            freq[arr[i]]++;
-        }
-        int res = -1;
-        FOR1(i,n){
-            if(freq[i] >= 3){
-                res = i;
-            }
-        }
-        cout<<res<<endl;
-
+       ll n;
+       cin>>n;
+       if(n%2 == 0){
+        cout<<(n/2)<<endl;
+       }
+       else
+       cout<<fixed<<setprecision(0)<<ceil((dbl)n/2)<<endl;
     }
 
 int main() {
-    int t;
+    ll t;
     cin >> t;
     while (t--) {
         solve();

@@ -21,22 +21,19 @@ typedef double dbl;
 void solve() {
         int n;
         cin>>n;
-        int arr[n+10];
+        string s;
+        cin>>s;
+        int freq[26] = {0};
+        int cnt = 0;
         FOR0(i,n){
-            cin>>arr[i];
-        }
-        sort(arr,arr+n);
-        int freq[200010] = {0};
-        FOR0(i,n){
-            freq[arr[i]]++;
-        }
-        int res = -1;
-        FOR1(i,n){
-            if(freq[i] >= 3){
-                res = i;
+            int solve = s[i]-'A';
+            if(freq[solve] != 0){
+                cnt+=1;
             }
+            else cnt+=2;
+            freq[solve]++;
         }
-        cout<<res<<endl;
+        cout<<cnt<<endl;
 
     }
 

@@ -26,17 +26,11 @@ void solve() {
             cin>>arr[i];
         }
         sort(arr,arr+n);
-        int freq[200010] = {0};
+        int cnt = 0;
         FOR0(i,n){
-            freq[arr[i]]++;
+            cnt+=arr[i] - arr[0];
         }
-        int res = -1;
-        FOR1(i,n){
-            if(freq[i] >= 3){
-                res = i;
-            }
-        }
-        cout<<res<<endl;
+        cout<<cnt<<endl;
 
     }
 
