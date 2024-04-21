@@ -17,31 +17,37 @@ typedef double dbl;
 // Loop
 #define FOR0(i, n) for (int i = 0; i < n; i++)  // 0 based indexing
 #define FOR1(i, n) for (int i = 1; i <= n; i++) // 1 based indexing
+#define Taratari()                \
+    ios_base::sync_with_stdio(0); \
+    cin.tie(0);                   \
+    cout.tie(0);
 
-
+void solve()
+{
+    int a, b, c;
+    cin >> a >> b >> c;
+    if (a < b && b < c)
+    {
+        cout << "STAIR" << endl;
+    }
+    else if (a < b && b > c)
+    {
+        cout << "PEAK" << endl;
+    }
+    else
+    {
+        cout << "NONE" << endl;
+    }
+}
 
 int main()
 {
-    int t;
+    Taratari();
+    ll t;
     cin >> t;
- 
-    int max = 200010;
-    vector<int> y(max);
- 
-    for (int i = 1; i < max; ++i) {
-        int x = 0;
-        int z = i;
-        while (z > 0) {
-            x += z % 10;
-            z /= 10;
-        }
-        y[i] = y[i - 1] + x;
+    while (t--)
+    {
+        solve();
     }
- 
-    while (t--) {
-        int n;
-        cin >> n;
-        cout << y[n] << endl;
-    }
-
+    // solve();
 }

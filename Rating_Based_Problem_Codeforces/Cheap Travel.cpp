@@ -18,42 +18,31 @@ typedef double dbl;
 #define FOR0(i, n) for (int i = 0; i < n; i++)  // 0 based indexing
 #define FOR1(i, n) for (int i = 1; i <= n; i++) // 1 based indexing
 
+#define Taratari()                \
+    ios_base::sync_with_stdio(0); \
+    cin.tie(0);                   \
+    cout.tie(0);
+
 void solve()
 {
-    int n;
-    cin >> n;
-    string s;
-    cin >> s;
-    int cnt = 0;
-    for (int i = 0; i < n;)
-    {
-        string s1 = "map";
-        string s2 = "pie";
-        if (s[i] == s1[0] && s[i + 1] == s1[1] && s[i + 2] == s1[2])
-        {
-            cnt++;
-            i += 3;
-        }
-        else if (s[i] == s2[0] && s[i + 1] == s2[1] && s[i + 2] == s2[2])
-        {
-            cnt++;
-            i += 3;
-        }
-        else
-        {
-            i++;
-        }
-    }
-    cout << cnt << endl;
+    ll n, m, a, b;
+    cin >> n >> m >> a >> b;
+    ll ans = n * a;
+    ll required = n / m;
+    ll for_offer = required * b;
+    ll done = required * m;
+    ll remain = n - done;
+    ll ans2 = for_offer + (remain * a);
+    ll ans3 = for_offer + (remain * b);
+    cout << min(ans, min(ans2, ans3)) << endl;
 }
-
 int main()
 {
-    ll t;
-    cin >> t;
+    Taratari();
+    int t = 1;
+    // cin >> t;
     while (t--)
     {
         solve();
     }
-    // solve();
 }
